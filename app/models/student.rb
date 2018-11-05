@@ -3,11 +3,11 @@ class Student < ActiveRecord::Base
     self.first_name + " " + self.last_name
   end
 
-  def activate
+  def activate_student
     if self.active
-      self.active == false
-    else self.active == true
+      self.update(active: false)
+    else self.update(active: true)
     end
   end
-  
+
 end

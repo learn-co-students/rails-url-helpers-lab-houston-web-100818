@@ -14,10 +14,10 @@ class StudentsController < ApplicationController
     end
   end
 
-  def activate_route
-    #activate_student_path(@student)
+  def activate
     @student = Student.find(params[:id])
-    @student.activate
+    @student.activate_student
+    activate_student_path(@student)
     redirect_to student_path(@student)
   end
 
